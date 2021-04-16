@@ -19,10 +19,12 @@ toc::[]
 . `mkdir out`
 . If you already have a copy of datasets (e.g., from https://github.com/liurui39660/Isconna[Isconna]), you can set the environment variable `DATASET_DIR` to its `data` folder
 .. Otherwise, `curl -OL https://github.com/liurui39660/Isconna/raw/master/data/data.zip`
-.. `mkdir data && tar -xf data.zip -C data`
-** You can see a directory like `data/CIC-IDS2018/processed`
-. `pip install -r requirements.txt` or `conda install --file requirements.txt`
-. `set PYTHONPATH=.;%PYTHONPATH%` (Windows) or `export PYTHONPATH=.:$PYTHONPATH` (Linux/macOS)
+.. `mkdir data && tar -xf data.zip -C data` (Windows)
+*** Or `unzip data.zip -d data` (Linux/macOS)
+*** You can see a directory like `data/CIC-IDS2018/processed`
+. `pip install -r requirements.txt`
+** Or `conda install --file requirements.txt -y`
+. `set PYTHONPATH=.` (Windows) or `export PYTHONPATH=.` (Linux/macOS)
 . `python example/Demo.py`
 
 This runs Isconna-EO on CIC-IDS2018 (`$DATASET_DIR/CIC-IDS2018/processed/Data.csv`) and prints ROC-AUC.
