@@ -22,6 +22,7 @@ toc::[]
 *** On Windows, you can click the link and download
 .. `mkdir data && tar -xf data.zip -C data` (Windows/Linux/macOS)
 ** You can see a directory like `data/CIC-IDS2018/processed`
+. `set PYTHONPATH=.;%PYTHONPATH%` (Windows) or `export PYTHONPATH=.:$PYTHONPATH` (Linux/macOS)
 . `python example/Demo.py`
 
 This runs Isconna-EO on CIC-IDS2018 (`$DATASET_DIR/CIC-IDS2018/processed/Data.csv`) and prints ROC-AUC.
