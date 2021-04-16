@@ -23,6 +23,7 @@ toc::[]
 .. Otherwise, `curl -OL https://github.com/liurui39660/Isconna/raw/master/data/data.zip`
 .. `mkdir data && tar -xf data.zip -C data` (Windows)
 *** Or `unzip data.zip -d data` (Linux/macOS)
+*** Or `7z x data.zip -odata`
 *** You can see a directory like `data/CIC-IDS2018/processed`
 . `pip install -r requirements.txt`
 ** Or `conda install --file requirements.txt -y`
