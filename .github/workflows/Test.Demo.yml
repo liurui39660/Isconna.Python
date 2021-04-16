@@ -24,11 +24,11 @@ jobs:
         run: |
           curl -OL https://github.com/liurui39660/Isconna/raw/master/data/data.zip
       - name: Extract datasets (Windows)
-        if: ${{ matrix.os == windows-latest }}
+        if: ${{ matrix.os == "windows-latest" }}
         run: |
           mkdir data && tar -xf data.zip -C data
       - name: Extract datasets (Linux & macOS)
-        if: ${{ matrix.os != windows-latest }}
+        if: ${{ matrix.os != "windows-latest" }}
         run: |
           unzip data.zip -d data
       - name: Run
