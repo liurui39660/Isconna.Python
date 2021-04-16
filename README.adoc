@@ -27,7 +27,7 @@ toc::[]
 *** You can see a directory like `data/CIC-IDS2018/processed`
 . `pip install -r requirements.txt`
 ** Or `conda install --file requirements.txt -y`
-. `set PYTHONPATH=.` (Windows) or `export PYTHONPATH=.` (Linux/macOS)
+. `set PYTHONPATH=src` (Windows) or `export PYTHONPATH=src` (Linux/macOS)
 . `python example/Demo.py`
 
 This runs Isconna-EO on CIC-IDS2018 (`$DATASET_DIR/CIC-IDS2018/processed/Data.csv`) and prints ROC-AUC.
@@ -86,7 +86,7 @@ You need to prepare three files:
 
 === External Dataset + Custom Runner
 
-. Copy the directory `Isconna` to where you need
+. Copy the directory `src/Isconna` to where you need
 . Import `Isconna` in the code
 . Instantiate cores with required parameters
 ** Number of CMS rows
