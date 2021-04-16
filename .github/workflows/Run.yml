@@ -20,7 +20,9 @@ jobs:
           mkdir data && tar -xf data.zip -C data
       - name: Run
         run: |
-          set PYTHONPATH=. && python example/Demo.py
+          python example/Demo.py
+        env:
+          PYTHONPATH: .
   Linux:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +42,9 @@ jobs:
           unzip data.zip -d data
       - name: Run
         run: |
-          export PYTHONPATH=. && python example/Demo.py
+          python example/Demo.py
+        env:
+          PYTHONPATH: .
   macOS:
     runs-on: macos-latest
     steps:
@@ -60,4 +64,6 @@ jobs:
           unzip data.zip -d data
       - name: Run
         run: |
-          export PYTHONPATH=. && python example/Demo.py
+          python example/Demo.py
+        env:
+          PYTHONPATH: .
