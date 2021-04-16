@@ -1,5 +1,8 @@
 name: Run
-on: push
+on:
+  push:
+    paths-ignore:
+      - "**/README.adoc"
 jobs:
   Windows:
     runs-on: windows-latest
