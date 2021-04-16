@@ -26,4 +26,4 @@ jobs:
       - name: Run
         run: python example/Demo.py
         env:
-          PYTHONPATH: .
+          PYTHONPATH: src
