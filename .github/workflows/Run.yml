@@ -18,12 +18,9 @@ jobs:
       - name: Extract datasets
         run: |
           mkdir data && tar -xf data.zip -C data
-      - name: Set environment variables
-        run: |
-          set PYTHONPATH=.
       - name: Run
         run: |
-          python example/Demo.py
+          set PYTHONPATH=. && python example/Demo.py
   Linux:
     runs-on: ubuntu-latest
     steps:
@@ -41,12 +38,9 @@ jobs:
       - name: Extract datasets
         run: |
           unzip data.zip -d data
-      - name: Set environment variables
-        run: |
-          export PYTHONPATH=.:$PYTHONPATH
       - name: Run
         run: |
-          python example/Demo.py
+          export PYTHONPATH=. && python example/Demo.py
   macOS:
     runs-on: macos-latest
     steps:
@@ -64,9 +58,6 @@ jobs:
       - name: Extract datasets
         run: |
           unzip data.zip -d data
-      - name: Set environment variables
-        run: |
-          export PYTHONPATH=.:$PYTHONPATH
       - name: Run
         run: |
-          python example/Demo.py
+          export PYTHONPATH=. && python example/Demo.py
