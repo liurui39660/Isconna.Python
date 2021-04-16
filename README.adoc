@@ -55,7 +55,7 @@ Uncomment the section "Export raw scores" of `example/Demo.py`.
 
 Cores are declared in the section "Do the magic" of `example/Demo.py`. Uncomment the desired core.
 
-=== Different Parameters/ Datasets
+=== Different Parameters / Datasets
 
 Parameters and dataset paths are specified in the section Parameter of `example/Demo.py`.
 
