@@ -20,13 +20,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Download datasets
-        run: |
-          curl -OL https://github.com/liurui39660/Isconna/raw/master/data/data.zip
+        run: curl -OL https://github.com/liurui39660/Isconna/raw/master/data/data.zip
       - name: Extract datasets
-        run: |
-          7z x data.zip -odata
+        run: 7z x data.zip -odata
       - name: Run
-        run: |
-          python example/Demo.py
+        run: python example/Demo.py
         env:
           PYTHONPATH: .
