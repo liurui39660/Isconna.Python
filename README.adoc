@@ -3,9 +3,7 @@ Rui LIU (@liurui39660)
 :toc: macro
 :toc-title:
 
-image:https://github.com/liurui39660/Isconna.Python/actions/workflows/Demo.Windows.yml/badge.svg[]
-image:https://github.com/liurui39660/Isconna.Python/actions/workflows/Demo.Linux.yml/badge.svg[]
-image:https://github.com/liurui39660/Isconna.Python/actions/workflows/Demo.macOS.yml/badge.svg[]
+image:https://github.com/liurui39660/Isconna.Python/actions/workflows/Test.Demo.yml/badge.svg[]
 
 Python porting of the https://github.com/liurui39660/Isconna[Isconna] algorithm.
 
