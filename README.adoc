@@ -18,9 +18,8 @@ toc::[]
 . `cd` to the project root `Isconna.Python`
 . `mkdir out`
 . If you already have a copy of datasets (e.g., from https://github.com/liurui39660/Isconna[Isconna]), you can set the environment variable `DATASET_DIR` to its `data` folder
-.. Otherwise, `wget https://github.com/liurui39660/Isconna/raw/master/data/data.zip` (Linux/macOS)
-*** On Windows, you can click the link and download
-.. `mkdir data && tar -xf data.zip -C data` (Windows/Linux/macOS)
+.. Otherwise, `curl -OL https://github.com/liurui39660/Isconna/raw/master/data/data.zip`
+.. `mkdir data && tar -xf data.zip -C data`
 ** You can see a directory like `data/CIC-IDS2018/processed`
 . `pip install -r requirements.txt` or `conda install --file requirements.txt`
 . `set PYTHONPATH=.;%PYTHONPATH%` (Windows) or `export PYTHONPATH=.:$PYTHONPATH` (Linux/macOS)
