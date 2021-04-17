@@ -1,8 +1,5 @@
 from setuptools import setup
 
-with open("README.md") as file:  # Created in CI
-	description = file.read()
-
 with open("VERSION") as file:  # Created in CI
 	version = file.readline()
 
@@ -12,7 +9,7 @@ setup(
 	author="Rui LIU",
 	author_email="xxliuruiabc@gmail.com",
 	description="Python porting of the Isconna algorithm",
-	long_description=description,
+	long_description="Pypi does not support an AsciiDoc README, please visit our GitHub repo https://github.com/liurui39660/Isconna.Python.",
 	long_description_content_type="text/markdown",
 	url="https://github.com/liurui39660/Isconna.Python",
 	project_urls={},

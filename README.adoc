@@ -9,6 +9,7 @@ image:https://badge.fury.io/py/Isconna.svg["PyPI version", link="https://pypi.or
 Python porting of the https://github.com/liurui39660/Isconna[Isconna] algorithm.
 
 .For pip users:
+* To install: `pip install --upgrade Isconna`
 * The demo is not included, see section <<External Dataset + Custom Runner>> for how to use Isconna
 * The complete change log is at link:CHANGELOG.adoc[]
 
