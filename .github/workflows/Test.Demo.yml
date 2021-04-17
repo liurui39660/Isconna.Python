@@ -1,10 +1,13 @@
 name: Test.Demo
 on:
   push:
-    paths-ignore:
-      - "**/README.adoc"
+    paths:
+      - src
+      - example
+      - .github/workflows/Test.Demo.yml
 jobs:
   main:
+    if: "!endsWith(github.event.head_commit.message ';')"
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest]
