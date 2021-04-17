@@ -7,7 +7,7 @@ on:
       - .github/workflows/Test.Demo.yml
 jobs:
   main:
-    if: "!endsWith(github.event.head_commit.message ';')"
+    if: ${{ !endsWith(github.event.head_commit.message ';') }}
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest]
