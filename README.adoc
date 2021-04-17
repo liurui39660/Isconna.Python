@@ -3,11 +3,17 @@ Rui LIU (@liurui39660)
 :toc: macro
 :toc-title:
 
-image:https://github.com/liurui39660/Isconna.Python/actions/workflows/Test.Demo.yml/badge.svg[]
+image:https://github.com/liurui39660/Isconna.Python/actions/workflows/Test.Demo.yml/badge.svg["Test.Demo status", link="https://github.com/liurui39660/Isconna.Python/actions/workflows/Test.Demo.yml"]
+image:https://badge.fury.io/py/Isconna.svg["PyPI version", link="https://pypi.org/project/Isconna/"]
 
 Python porting of the https://github.com/liurui39660/Isconna[Isconna] algorithm.
 
-For researchers: Please consider using the https://github.com/liurui39660/Isconna[C++ version] as the baseline, this porting may not receive timely updates.
+.For pip users:
+* The demo is not included, see section <<External Dataset + Custom Runner>> for how to use Isconna
+* The complete change log is at link:CHANGELOG.adoc[]
+
+.For researchers:
+* Please consider using the https://github.com/liurui39660/Isconna[C++ version] as the baseline, this porting may not receive timely updates.
 
 [discrete]
 === Table of Contents
