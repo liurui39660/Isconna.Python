@@ -2,8 +2,8 @@ name: Test.Demo
 on:
   push:
     paths:
-      - src
-      - example
+      - 'src/**'
+      - 'example/**'
       - .github/workflows/Test.Demo.yml
 jobs:
   main:
