@@ -1,7 +1,17 @@
+from os.path import exists
+
 from setuptools import setup
 
-with open("VERSION") as file:  # Created in CI
-	version = file.readline()
+if exists("VERSION"):  # GitHub Actions
+	with open("VERSION") as file:
+		version = file.readline()
+elif exists("PKG-INFO"):  # Conda
+	with open("PKG-INFO") as file:
+		for line in file:
+			if line.startswith("Version: "):
+				version = line[9:]
+				break
+else: raise FileNotFoundError("Can't find the version number")
 
 setup(
 	name="Isconna",
