@@ -93,6 +93,7 @@ You need to prepare three files:
 === External Dataset + Custom Runner
 
 . Copy the directory `src/Isconna` to where you need
+** Pip users can skip this step, it's already installed
 . Import `Isconna` in the code
 . Instantiate cores with required parameters
 ** Number of CMS rows
