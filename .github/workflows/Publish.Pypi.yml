@@ -21,7 +21,9 @@ jobs:
         with:
           args: "-f docbook README.xml -t markdown_strict -o README.md"
       - name: Get VERSION
-        run: echo ${{ env.GITHUB_REF }} > VERSION
+        id: GetVersion
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+      - run: echo ${{ steps.GetVersion.outputs.tag }} > VERSION
       - name: Build
         run: python -m build
       - name: Publish
