@@ -4,7 +4,7 @@ on:
     paths:
       - 'src/**'
       - 'example/**'
-      - .github/workflows/Test.Demo.yml
+      - '.github/workflows/Test.Demo.yml'
 jobs:
   main:
     if: ${{ !endsWith(github.event.head_commit.message, ';') }}
