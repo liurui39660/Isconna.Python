@@ -4,7 +4,7 @@ Rui LIU (@liurui39660)
 :toc-title:
 
 image:https://github.com/liurui39660/Isconna.Python/actions/workflows/Test.Demo.yml/badge.svg["Test.Demo status", link="https://github.com/liurui39660/Isconna.Python/actions/workflows/Test.Demo.yml"]
-image:https://badge.fury.io/py/Isconna.svg["PyPI version", link="https://pypi.org/project/Isconna/"]
+image:https://img.shields.io/pypi/v/Isconna.svg["PyPI version", link="https://pypi.org/project/Isconna/"]
 
 Python porting of the https://github.com/liurui39660/Isconna[Isconna] algorithm.
 
