@@ -1,10 +1,9 @@
-from mmap import ACCESS_READ, mmap
 from os import environ
 from pathlib import Path
 
 from pyprojroot import here
 from sklearn.metrics import roc_auc_score
-from tqdm import tqdm
+from tqdm import tqdm, trange
 
 import Isconna
 
@@ -48,19 +47,18 @@ if __name__ == '__main__':
 
 	# Read dataset
 	# --------------------------------------------------------------------------------
+	# I can process them streamingly, but I/O is too slow
 
-	with open(pathMeta) as fileMeta:
-		n = int(fileMeta.readline())
+	n = int(pathMeta.read_bytes())
 
 	src = [0] * n
 	dst = [0] * n
 	ts = [0] * n
-	with open(pathData) as fileData, mmap(fileData.fileno(), 0, access=ACCESS_READ) as mmapData:  # type: mmap
-		for i, edge in tqdm(enumerate(map(lambda a: map(int, a.split(b",")), mmapData.read().split(b"\n", n)[:n])), "Loading data", n, unit_scale=True):
-			src[i], dst[i], ts[i] = edge  # I know I can use zip(), but this is more interactive
+	data = pathData.read_bytes().splitlines()[:n]
+	for i in trange(n, desc="Load Dataset", unit_scale=True):
+		src[i], dst[i], ts[i] = map(int, data[i].split(b","))
 
-	with open(pathLabel) as fileLabel, mmap(fileLabel.fileno(), 0, access=ACCESS_READ) as mmapLabel:  # type: mmap
-		label = list(map(int, mmapLabel.read().split(b"\n", n)[:n]))
+	label = list(map(int, pathLabel.read_bytes().splitlines()[:n]))
 
 	# Do the magic
 	# --------------------------------------------------------------------------------
@@ -68,16 +66,17 @@ if __name__ == '__main__':
 	score = [0.0] * n
 	isc = Isconna.EdgeOnlyCore(shapeCMS[0], shapeCMS[1], zeta)
 	# isc = Isconna.EdgeNodeCore(shapeCMS[0], shapeCMS[1], zeta)
-	for i in tqdm(range(n), isc.nameAlg, unit_scale=True):
+	for i in trange(n, desc=isc.nameAlg, unit_scale=True):
 		score[i] = isc.FitPredict(src[i], dst[i], ts[i], alpha, beta, gamma)
 
 	# Export raw scores
 	# --------------------------------------------------------------------------------
 
-	# with open(pathScore, "w", newline="\n") as fileScore:
-	# 	for sc in tqdm(score, "Exporting scores", unit_scale=True):
-	# 		fileScore.write(f"{sc}\n")
-	# print(f"// Raw scores are exported to\n// {pathScore}")
+	pathScore.parent.mkdir(exist_ok=True)
+	with open(pathScore, "w", newline="\n") as file:
+		for sc in tqdm(score, "Export Scores", unit_scale=True):
+			file.write(f"{sc}\n")
+	print(f"// Raw scores are exported to\n// {pathScore}")
 
 	# Evaluate results
 	# --------------------------------------------------------------------------------
