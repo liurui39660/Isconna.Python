@@ -67,7 +67,7 @@ if __name__ == '__main__':
 	isc = Isconna.EdgeOnlyCore(shapeCMS[0], shapeCMS[1], zeta)
 	# isc = Isconna.EdgeNodeCore(shapeCMS[0], shapeCMS[1], zeta)
 	for i in trange(n, desc=isc.nameAlg, unit_scale=True):
-		score[i] = isc.FitPredict(src[i], dst[i], ts[i], alpha, beta, gamma)
+		score[i] = isc.Call(src[i], dst[i], ts[i], alpha, beta, gamma)
 
 	# Export raw scores
 	# --------------------------------------------------------------------------------

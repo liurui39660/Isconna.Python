@@ -24,7 +24,6 @@ toc::[]
 
 . Open a terminal
 . `cd` to the project root `Isconna.Python`
-. `mkdir out`
 . If you already have a copy of datasets (e.g., from https://github.com/liurui39660/Isconna[Isconna]), you can set the environment variable `DATASET_DIR` to its `data` folder
 .. Otherwise, `curl -OL https://github.com/liurui39660/Isconna/raw/master/data/data.zip`
 .. `mkdir data && tar -xf data.zip -C data` (Windows)
@@ -99,7 +98,7 @@ You need to prepare three files:
 ** Number of CMS rows
 ** Number of CMS columns
 ** Decay factor (default is 0, i.e., keep nothing)
-. Call `FitPredict()` on individual records, the signature includes
+. Call `Call()` on individual records, the signature includes
 .. Source (categorical)
 .. Destination (categorical)
 .. Timestamp
